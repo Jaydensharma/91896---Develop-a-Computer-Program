@@ -2,4 +2,6 @@
 #Author: Jayden Sharma
 #Purpose: Demonstrate Github and use it correctly.
 
-Print("Tej likes BBC")
+Print("Hi world ")
+x = ("what is your name?")
+print(x)
