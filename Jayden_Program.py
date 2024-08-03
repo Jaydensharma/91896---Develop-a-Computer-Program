@@ -1,6 +1,6 @@
 #03/08/2024
 #Author: Jayden Sharma
-#Purpose: The purpose of this stage is to figure out how to make the main menu
+#Purpose: The purpose of this stage is to figure out how to make the main menu.
 
 
 import tkinter as tk
