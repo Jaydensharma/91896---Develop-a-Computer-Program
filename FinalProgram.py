@@ -1,9 +1,10 @@
-#06/08/2024
+#07/08/2024
 #Author: Jayden Sharma
-#Purpose: The purpose of this stage is to start polishing and adding all the 
-# neccessary lables and boxes into the hire window to allow everything to work
+#Purpose: The purpose of this prototype is to start finalising the hire window by adding all the options 
+# and fancy buttons to make the GUI interface look professional
 
 import tkinter as tk
+from tkinter import ttk
 from tkinter import *
 
 #creates the main menu as its own application / class
@@ -20,14 +21,13 @@ class Application(tk.Tk):
         Button(self, text="Quit", command=self.quit_application).pack(pady=10)
 
     def open_hire_window(self):
-        HireWindow(self) #when user presses hire it sends the user to this directory
+        HireWindow(self) #when user presses hire it sends the user to this directory / application / class
 
     def open_return_window(self):
-        pass # doesnt do anything at this stage
-    
-    #quits the program / ends the program
+        pass # doesnt work at this stage.
+
     def quit_application(self):
-        self.destroy()
+        self.destroy() # ends the program / quits the program
 
 #creates it own hire window class / application
 class HireWindow(tk.Toplevel):
@@ -49,11 +49,21 @@ class HireWindow(tk.Toplevel):
         #Poistions the text box
         self.entry_lname.grid(column=1, row=1, padx=10, pady=5)
 
-        # Creates a label / text box to let the user be able to input the item they would like to hire
+        # creates the text next to the combobox which displayes hire name and positions the lable on the far left side.
         Label(self, text="Item Name").grid(column=0, row=2, padx=10, pady=5)
-        self.entry_item = Entry(self)
-        #Postions the item hired box
-        self.entry_item.grid(column=1, row=2, padx=10, pady=5)
+        # creates a list of party items that the user can choose to hire from
+        party_items = ["Balloons", "Streamers", "Party Hats", "Cake", "Cupcakes"]
+        # loads the party_items directory into the combo box to allow it to be displayed as options
+        self.combo_item = ttk.Combobox(self, values=party_items)
+        #positions the combo box
+        self.combo_item.grid(column=1, row=2, padx=10, pady=5)
+
+        #adding the number of items option in the code and positions it below all the other labels
+        Label(self, text="Number Of Items").grid(column=0, row=3, padx=10, pady=5)
+        #creates a spin box which ranges from 1- 100
+        self.spinbox_items = Spinbox(self, from_=1, to=100)
+        # positions the spin box
+        self.spinbox_items.grid(column=1, row=3, padx=10, pady=5)
 
 #allows the window to keep on looping back until the user decides what they would like to do.
 if __name__ == "__main__":
