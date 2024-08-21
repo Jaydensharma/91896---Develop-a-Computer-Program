@@ -1,7 +1,7 @@
 #09/08/2024
 #Author: Jayden Sharma
 #Purpose: The purpose of my prototype number 7 is to start adding my validation and allowing my code
-#to start functioning correctly
+#to start functioning correctly.
 
 import tkinter as tk
 from tkinter import ttk
